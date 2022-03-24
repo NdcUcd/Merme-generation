@@ -4,12 +4,13 @@ using UnityEngine.UI;
 public class Meme
 {
     RawImage image;
-    string[] texts;
+    string traceryAttributes;
     GameObject[] textsLocations;
 
     public Meme(int imageUrlIndex)
     {
         Manager.imageManager._DownloadImage(Manager._imagesUrl[imageUrlIndex]);
+        traceryAttributes = "#animal# #mood#";
     }
 
     public RawImage Image
@@ -18,10 +19,10 @@ public class Meme
         set { this.image = value; }
     }
 
-    public string[] Texts
+    public string TraceryAttributes
     {
-        get { return this.texts; }
-        set { this.texts = value; }
+        get { return this.traceryAttributes; }
+        set { this.traceryAttributes = value; }
     }
 
     public GameObject[] TextsLocations

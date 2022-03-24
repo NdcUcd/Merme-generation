@@ -47,11 +47,20 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Tracery\Scripts\GrammarToken.cs" />
      <Compile Include="Assets\Scripts\ImageManager.cs" />
+     <Compile Include="Assets\Tracery\Demo\Scripts\DemoPanel.cs" />
      <Compile Include="Assets\Scripts\TitleManager.cs" />
      <Compile Include="Assets\Scripts\Manager.cs" />
+     <Compile Include="Assets\Tracery\JSON\JSONObject.cs" />
+     <Compile Include="Assets\Tracery\JSON\JSONTemplates.cs" />
+     <Compile Include="Assets\Tracery\JSON\VectorTemplates.cs" />
+     <Compile Include="Assets\Tracery\Scripts\Modifiers.cs" />
+     <Compile Include="Assets\Tracery\Scripts\TraceryGrammar.cs" />
      <Compile Include="Assets\Scripts\Class\Meme.cs" />
+     <Compile Include="Assets\Tracery\Scripts\JSONObjectExtensions.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+     <None Include="Assets\Tracery\JSON\readme.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />

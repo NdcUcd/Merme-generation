@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityTracery;
+using TMPro;
 
 public class Manager : MonoBehaviour
 {
@@ -19,6 +20,11 @@ public class Manager : MonoBehaviour
 
     public static ImageManager imageManager;
 
+    public TraceryGrammar grammar;
+
+    [SerializeField] TextAsset grammarFile;
+    [SerializeField] TextMeshProUGUI titleTMP;
+
 
     void Start()
     {
@@ -29,14 +35,18 @@ public class Manager : MonoBehaviour
         _imagesUrl = imagesUrl;
 
         imageManager = FindObjectOfType<ImageManager>();
+        grammar = new TraceryGrammar(grammarFile.text);
+
         GenerateMeme();
     }
 
     public void GenerateMeme()
     {
-        int r = Random.Range(0, imagesUrl.Count);
-        Meme meme = new Meme(r);
+       int r = Random.Range(0, imagesUrl.Count);
+       Meme meme = new Meme(r);
+       titleTMP.text = grammar.Parse(meme.TraceryAttributes);
     }
+
 
     public void QuitApp()
     {
