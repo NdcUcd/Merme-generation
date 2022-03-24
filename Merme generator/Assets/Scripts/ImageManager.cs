@@ -9,10 +9,12 @@ public class ImageManager : MonoBehaviour
     [SerializeField] List<string> imagesUrl = new List<string>();
     [SerializeField] int imageHeightLimit, imageWidthLimit;
     static RawImage image;
+    static GameObject _loading;
 
-    private void Start()
+    private void Awake()
     {
         image = GetComponent<RawImage>();
+        _loading = transform.GetChild(0).gameObject;
     }
 
     public void GenerateNewImage()
@@ -25,6 +27,8 @@ public class ImageManager : MonoBehaviour
 
     public static IEnumerator DownloadImage(string imageUrl)
     {
+        _loading.SetActive(true);
+
         int imageWidthLimit = Manager._imageWidthLimit,
             imageHeightLimit = Manager._imageHeightLimit;
 
@@ -65,5 +69,7 @@ public class ImageManager : MonoBehaviour
 
 
         }
+
+        _loading.SetActive(false);
     }
 }
