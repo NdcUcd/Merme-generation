@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class ImageManager : MonoBehaviour
 {
-    [SerializeField] List<string> imagesUrl = new List<string>();
     [SerializeField] int imageHeightLimit, imageWidthLimit;
     static RawImage image;
     static GameObject _loading;
@@ -17,34 +16,38 @@ public class ImageManager : MonoBehaviour
         _loading = transform.GetChild(0).gameObject;
     }
 
-    public void GenerateNewImage()
-    {
-        int r = Random.Range(0, imagesUrl.Count);
-        StartCoroutine(DownloadImage(imagesUrl[r]));
-    }
-
     public void _DownloadImage(string imageUrl) { StartCoroutine(DownloadImage(imageUrl)); }
 
     public static IEnumerator DownloadImage(string imageUrl)
     {
         _loading.SetActive(true);
 
-        int imageWidthLimit = Manager._imageWidthLimit,
-            imageHeightLimit = Manager._imageHeightLimit;
-
         UnityWebRequest request = UnityWebRequestTexture.GetTexture(imageUrl);
         yield return request.SendWebRequest();
 
         if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
-        {
             Manager._internetErrorPanel.SetActive(true);
-        }
         else
-        {
-            Texture downloadedImage = ((DownloadHandlerTexture)request.downloadHandler).texture;
+            DownloadImage(request);
 
-            float imageWidth = downloadedImage.width;
-            float imageHeight = downloadedImage.height;
+        _loading.SetActive(false);
+    }
+
+    static void DownloadImage(UnityWebRequest request)
+    {
+        Texture downloadedImage = ((DownloadHandlerTexture)request.downloadHandler).texture;
+
+        ScaleImage(downloadedImage);
+        image.texture = downloadedImage;
+    }
+
+    static void ScaleImage(Texture imgTexture)
+    {
+        int imageWidthLimit = Manager._imageWidthLimit,
+        imageHeightLimit = Manager._imageHeightLimit;
+
+        float imageWidth = imgTexture.width;
+            float imageHeight = imgTexture.height;
 
             if (imageWidth > imageWidthLimit)
             {
@@ -55,21 +58,10 @@ public class ImageManager : MonoBehaviour
             imageWidth = image.rectTransform.sizeDelta.x;
             imageHeight = image.rectTransform.sizeDelta.y;
 
-
             if (imageHeight > imageHeightLimit)
             {
                 float imageWidthRatio = imageHeightLimit / imageHeight;
                 image.rectTransform.sizeDelta = new Vector2(imageWidth * imageWidthRatio, imageHeightLimit);
             }
-
-
-            image.texture = downloadedImage;
-           // image.rectTransform.sizeDelta = new Vector2(imageWidth, imageHeight);
-
-
-
-        }
-
-        _loading.SetActive(false);
     }
 }

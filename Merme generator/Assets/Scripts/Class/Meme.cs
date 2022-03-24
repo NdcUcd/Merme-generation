@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
 using UnityEngine.UI;
 
 public class Meme
@@ -10,9 +7,9 @@ public class Meme
     string[] texts;
     GameObject[] textsLocations;
 
-    public Meme(string imageUrl)
+    public Meme(int imageUrlIndex)
     {
-        GameObject.Find("Image").GetComponent<ImageManager>()._DownloadImage(imageUrl);
+        Manager.imageManager._DownloadImage(Manager._imagesUrl[imageUrlIndex]);
     }
 
     public RawImage Image
