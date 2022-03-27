@@ -13,10 +13,5 @@ public class TitleManager : MonoBehaviour
         title = GetComponent<TextMeshProUGUI>();
     }
 
-    public static void DetermineNewTitle()
-    {
-
-    }
-
     void UpdateTitle(string newTitle) { title.text = newTitle; }
 }

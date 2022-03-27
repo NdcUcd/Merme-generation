@@ -7,10 +7,10 @@ public class Meme
     string traceryAttributes;
     GameObject[] textsLocations;
 
-    public Meme(int imageUrlIndex)
+    public Meme(int listIndex, int imageIndex)
     {
-        Manager.imageManager._DownloadImage(Manager._imagesUrl[imageUrlIndex]);
-        traceryAttributes = "#animal# #mood#";
+        Manager.imageManager._DownloadImage(Manager._imagesUrl[listIndex].myList[imageIndex]);
+        traceryAttributes = "#reactions#";
     }
 
     public RawImage Image

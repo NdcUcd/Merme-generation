@@ -15,8 +15,11 @@ public class Manager : MonoBehaviour
     [SerializeField] RawImage image;
     public static RawImage _image;
 
-    [SerializeField] List<string> imagesUrl = new List<string>();
-    public static List<string> _imagesUrl;
+
+    [Tooltip("0 = reactions\n" +
+             "1 = images with text")]
+    [SerializeField] List<ListWrapper> imagesUrl = new List<ListWrapper>();
+    public static List<ListWrapper> _imagesUrl = new List<ListWrapper>();
 
     public static ImageManager imageManager;
 
@@ -42,9 +45,12 @@ public class Manager : MonoBehaviour
 
     public void GenerateMeme()
     {
-       int r = Random.Range(0, imagesUrl.Count);
-       Meme meme = new Meme(r);
-       titleTMP.text = grammar.Parse(meme.TraceryAttributes);
+        int rand_list = Random.Range(0, imagesUrl.Count);
+        int rand_index = Random.Range(0, imagesUrl[rand_list].myList.Count);
+
+        Meme meme = new Meme(rand_list, rand_index);
+
+        titleTMP.text = grammar.Parse(meme.TraceryAttributes);
     }
 
 
@@ -55,5 +61,11 @@ public class Manager : MonoBehaviour
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #endif
+    }
+
+    [System.Serializable]
+    public class ListWrapper
+    {
+        public List<string> myList;
     }
 }
