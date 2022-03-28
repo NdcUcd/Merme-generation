@@ -18,8 +18,8 @@ public class Manager : MonoBehaviour
 
     [Tooltip("0 = reactions\n" +
              "1 = images with text")]
-    [SerializeField] List<ListWrapper> imagesUrl = new List<ListWrapper>();
-    public static List<ListWrapper> _imagesUrl = new List<ListWrapper>();
+    [SerializeField] List<ListStringWrapper> imagesUrl = new List<ListStringWrapper>();
+    public static List<ListStringWrapper> _imagesUrl = new List<ListStringWrapper>();
 
     public static ImageManager imageManager;
 
@@ -27,6 +27,7 @@ public class Manager : MonoBehaviour
 
     [SerializeField] TextAsset grammarFile;
     [SerializeField] TextMeshProUGUI titleTMP;
+    [SerializeField] GameObject tmpPrefab;
 
 
     void Start()
@@ -43,14 +44,99 @@ public class Manager : MonoBehaviour
         GenerateMeme();
     }
 
+    public List<List<List<int>>> captionsPositions = new List<List<List<int>>>
+    {
+        new List<List<int>>
+        {
+            new List<int> { 0, 75 },
+            new List<int> {140, -60},
+            new List<int> { -100, -100 }
+        },
+        
+
+        new List<List<int>>
+        {
+            new List<int> { 140, -80 },
+            new List<int> { 0, -50 },
+            new List<int> {-150, 30}
+        },
+
+        new List<List<int>>
+        {
+            new List<int> { 140, 100 },
+            new List<int> { -50, 100 },
+            new List<int> { -175, 60 },
+            new List<int> { 50, -30 }
+        },
+
+        new List<List<int>>
+        {
+            new List<int> { 70, 100 },
+            new List<int> { -100, -40 }
+        },
+
+        new List<List<int>>
+        {
+            new List<int> { 160, 50 },
+            new List<int> { -110, -50 }
+        },
+
+        new List<List<int>>
+        {
+            new List<int> { 63, 50 },
+            new List<int> { -100, 30 }
+        },
+        
+        new List<List<int>>
+        {
+            new List<int> { -200, 110 },
+            new List<int> { 220, 60 }
+        },
+
+        new List<List<int>>
+        {
+            new List<int> { 80, 40 },
+            new List<int> { -110, 30 }
+        },
+
+        new List<List<int>>
+        {
+            new List<int> { 65, -75 },
+            new List<int> { 65, 90 }
+        }
+    };
+
     public void GenerateMeme()
     {
-        int rand_list = Random.Range(0, imagesUrl.Count);
-        int rand_index = Random.Range(0, imagesUrl[rand_list].myList.Count);
+        imageManager.DeleteCaption();
 
+        int rand_list =  Random.Range(0, imagesUrl.Count);
+        int rand_index = Random.Range(0, imagesUrl[rand_list].list.Count);
+
+        Debug.Log(rand_index);
+        
         Meme meme = new Meme(rand_list, rand_index);
 
-        titleTMP.text = grammar.Parse(meme.TraceryAttributes);
+        if (rand_list == 0) {
+            titleTMP.text = grammar.Parse(meme.TraceryAttributes);
+        }
+        else
+        {
+            titleTMP.text = "";
+            MemeWithCaption(meme, rand_index);
+        }
+    }
+
+    public void MemeWithCaption(Meme meme, int index)
+    {
+        for (int i = 0; i < captionsPositions[index].Count; i++)
+        {
+            GameObject textGo = Instantiate(tmpPrefab);
+            textGo.transform.SetParent(image.transform);
+            List<int> captionPosition = captionsPositions[index][i];
+            textGo.transform.localPosition = new Vector2(captionPosition[0], captionPosition[1]);
+            textGo.transform.GetComponent<TextMeshProUGUI>().text = grammar.Parse(meme.TraceryAttributes);
+        }
     }
 
 
@@ -64,8 +150,8 @@ public class Manager : MonoBehaviour
     }
 
     [System.Serializable]
-    public class ListWrapper
+    public class ListStringWrapper
     {
-        public List<string> myList;
+        public List<string> list;
     }
 }

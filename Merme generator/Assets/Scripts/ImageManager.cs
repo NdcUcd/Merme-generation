@@ -15,7 +15,7 @@ public class ImageManager : MonoBehaviour
     private void Awake()
     {
         image = GetComponent<RawImage>();
-        _loading = transform.GetChild(0).gameObject;
+        _loading = GameObject.Find("Loading");
         _imageHeightLimit = imageHeightLimit;
         _imageWidthLimit = imageWidthLimit;
     }
@@ -44,14 +44,6 @@ public class ImageManager : MonoBehaviour
 
         if (image.texture.width > Manager._imageWidthLimit || image.texture.height > Manager._imageHeightLimit)
         {
-            //Debug.Log("gonna scale");
-
-            //int[] resolution = scaleResolution(image.texture.width, image.texture.height, Manager._imageWidthLimit, Manager._imageHeightLimit);
-
-            //int width = resolution[0],
-            //    height = resolution[1];
-
-            //image.rectTransform.sizeDelta = new Vector2(width, height);
             Texture imgTexture = image.texture;
 
             if (image.texture.width > Manager._imageWidthLimit || image.texture.height > Manager._imageHeightLimit)
@@ -110,5 +102,13 @@ public class ImageManager : MonoBehaviour
         {
             image.rectTransform.sizeDelta = new Vector2(image.texture.width, image.texture.height);
         }
+    }
+
+    public void DeleteCaption()
+    {
+        if (transform.childCount == 0) return;
+
+        for (int i = 0; i < transform.childCount; i++)
+            Destroy(transform.GetChild(i).gameObject);
     }
 }

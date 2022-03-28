@@ -14,8 +14,10 @@
   "story": [ "#hero# the #heroJob# #setSailForAdventure#. #openBook#" ],
   "origin": [ "Once upon a time, #[#setCharacter#]story#" ],
 
-  "reactions": [ "When #subject# #verbs# #subject#" ],
-  "pronoun": [ "my", "your"],
+
+  "reactions": [ "#when#" ],
+  "when": [ "When #subject# #verbs# #subject#" ],
+  "pronoun": [ "my"],
   "subject": [
     "#pronoun# dog",
     "#pronoun# mom",
@@ -36,14 +38,14 @@
     "Tony",
     "Danny Trejo",
     "Kevin Spacey",
-    "#pronoun# government",
+    "the government",
     "House of Lords",
     "the people",
     "the economy",
     "the new regulation on nuclear weapons",
     "The New York Times CEO",
-    "#pronouns# will to live",
-    "#pronouns# suicidal thoughts",
+    "my will to live",
+    "my suicidal thoughts",
     "Chinese government",
     "Big Brother",
     "Ministry of Love"

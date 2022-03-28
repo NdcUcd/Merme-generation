@@ -9,8 +9,9 @@ public class Meme
 
     public Meme(int listIndex, int imageIndex)
     {
-        Manager.imageManager._DownloadImage(Manager._imagesUrl[listIndex].myList[imageIndex]);
-        traceryAttributes = "#reactions#";
+        Manager.imageManager._DownloadImage(Manager._imagesUrl[listIndex].list[imageIndex]);
+        if (listIndex == 0) traceryAttributes = "#reactions#";
+        else if (listIndex == 1) traceryAttributes = "#subject#";
     }
 
     public RawImage Image
