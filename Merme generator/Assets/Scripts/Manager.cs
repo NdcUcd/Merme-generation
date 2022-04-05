@@ -44,68 +44,6 @@ public class Manager : MonoBehaviour
         GenerateMeme();
     }
 
-    public List<List<List<int>>> captionsPositions = new List<List<List<int>>>
-    {
-        new List<List<int>>
-        {
-            new List<int> { 0, 75 },
-            new List<int> {140, -60},
-            new List<int> { -100, -100 }
-        },
-        
-
-        new List<List<int>>
-        {
-            new List<int> { 140, -80 },
-            new List<int> { 0, -50 },
-            new List<int> {-150, 30}
-        },
-
-        new List<List<int>>
-        {
-            new List<int> { 140, 100 },
-            new List<int> { -50, 100 },
-            new List<int> { -175, 60 },
-            new List<int> { 50, -30 }
-        },
-
-        new List<List<int>>
-        {
-            new List<int> { 70, 100 },
-            new List<int> { -100, -40 }
-        },
-
-        new List<List<int>>
-        {
-            new List<int> { 160, 50 },
-            new List<int> { -110, -50 }
-        },
-
-        new List<List<int>>
-        {
-            new List<int> { 63, 50 },
-            new List<int> { -100, 30 }
-        },
-        
-        new List<List<int>>
-        {
-            new List<int> { -200, 110 },
-            new List<int> { 220, 60 }
-        },
-
-        new List<List<int>>
-        {
-            new List<int> { 80, 40 },
-            new List<int> { -110, 30 }
-        },
-
-        new List<List<int>>
-        {
-            new List<int> { 65, -75 },
-            new List<int> { 65, 90 }
-        }
-    };
-
     public void GenerateMeme()
     {
         imageManager.DeleteCaption();
@@ -129,11 +67,11 @@ public class Manager : MonoBehaviour
 
     public void MemeWithCaption(Meme meme, int index)
     {
-        for (int i = 0; i < captionsPositions[index].Count; i++)
+        for (int i = 0; i < CaptionsPositions.data[index].Count; i++)
         {
             GameObject textGo = Instantiate(tmpPrefab);
             textGo.transform.SetParent(image.transform);
-            List<int> captionPosition = captionsPositions[index][i];
+            List<int> captionPosition = CaptionsPositions.data[index][i];
             textGo.transform.localPosition = new Vector2(captionPosition[0], captionPosition[1]);
             textGo.transform.GetComponent<TextMeshProUGUI>().text = grammar.Parse(meme.TraceryAttributes);
         }
