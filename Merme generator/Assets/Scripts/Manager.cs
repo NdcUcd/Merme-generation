@@ -29,7 +29,7 @@ public class Manager : MonoBehaviour
     [SerializeField] TextMeshProUGUI titleTMP;
     [SerializeField] GameObject tmpPrefab;
 
-
+    int i = 0;
     void Start()
     {
         _imageHeightLimit = imageHeightLimit;
@@ -48,10 +48,10 @@ public class Manager : MonoBehaviour
     {
         imageManager.DeleteCaption();
 
-        int rand_list =  Random.Range(0, imagesUrl.Count);
-        int rand_index = Random.Range(0, imagesUrl[rand_list].list.Count);
-
-        Debug.Log(rand_index);
+        int rand_list = 1;  //Random.Range(0, imagesUrl.Count);
+        int rand_index = i; //Random.Range(0, imagesUrl[rand_list].list.Count);
+        i++;
+        Debug.Log(rand_list + " " + rand_index);
         
         Meme meme = new Meme(rand_list, rand_index);
 
