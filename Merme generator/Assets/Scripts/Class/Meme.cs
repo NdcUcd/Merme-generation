@@ -11,7 +11,7 @@ public class Meme
     {
         Manager.imageManager._DownloadImage(Manager._imagesUrl[listIndex].list[imageIndex]);
         if (listIndex == 0)      traceryAttributes = "#reactions#";
-        else if (listIndex == 1) traceryAttributes = "#subject#";
+        else if (listIndex == 1) traceryAttributes = GetTraceryAttributes(10);
     }
 
     public RawImage Image
@@ -30,5 +30,16 @@ public class Meme
     {
         get { return textsLocations; }
         set { textsLocations = value; }
+    }
+
+    string GetTraceryAttributes(int index)
+    {
+        switch (index)
+        {
+            case 10:
+                return "#opposites#";
+            default:
+                return null;
+        }
     }
 }

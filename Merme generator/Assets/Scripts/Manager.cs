@@ -29,7 +29,6 @@ public class Manager : MonoBehaviour
     [SerializeField] TextMeshProUGUI titleTMP;
     [SerializeField] GameObject tmpPrefab;
 
-    int i = 0;
     void Start()
     {
         _imageHeightLimit = imageHeightLimit;
@@ -48,9 +47,8 @@ public class Manager : MonoBehaviour
     {
         imageManager.DeleteCaption();
 
-        int rand_list = 1;  //Random.Range(0, imagesUrl.Count);
-        int rand_index = i; //Random.Range(0, imagesUrl[rand_list].list.Count);
-        i++;
+        int rand_list = 1;// Random.Range(0, imagesUrl.Count);
+        int rand_index = 10;// Random.Range(0, imagesUrl[rand_list].list.Count);
         Debug.Log(rand_list + " " + rand_index);
         
         Meme meme = new Meme(rand_list, rand_index);
@@ -67,13 +65,15 @@ public class Manager : MonoBehaviour
 
     public void MemeWithCaption(Meme meme, int index)
     {
+        string[] textGenerated = grammar.Parse(meme.TraceryAttributes).Split('/');
+
         for (int i = 0; i < CaptionsPositions.data[index].Count; i++)
         {
             GameObject textGo = Instantiate(tmpPrefab);
             textGo.transform.SetParent(image.transform);
             List<int> captionPosition = CaptionsPositions.data[index][i];
             textGo.transform.localPosition = new Vector2(captionPosition[0], captionPosition[1]);
-            textGo.transform.GetComponent<TextMeshProUGUI>().text = grammar.Parse(meme.TraceryAttributes);
+            textGo.transform.GetComponent<TextMeshProUGUI>().text = textGenerated[i];
         }
     }
 

@@ -1277,7 +1277,7 @@ MonoBehaviour:
   image: {fileID: 1756412829}
   imagesUrl:
   - list:
-    - https://imgflip.com/s/meme/Success-Kid-Original.jpg
+    - .jpgs://imgflip.com/s/meme/Success-Kid-Original.jpg
     - https://i.imgflip.com/3txjbc.jpg
     - https://i.imgflip.com/391pr7.jpg
     - https://i.imgflip.com/1nhqil.jpg
@@ -1297,6 +1297,7 @@ MonoBehaviour:
     - https://imgflip.com/s/meme/Laughing-Leo.png
     - https://imgflip.com/s/meme/Captain-Picard-Facepalm.jpg
     - https://imgflip.com/s/meme/Surprised-Koala.jpg
+    - https://i.imgflip.com/2ngkpf.jpg
   - list:
     - https://i.imgflip.com/2am8vj.jpg
     - https://i.imgflip.com/47fb8x.jpg
