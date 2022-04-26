@@ -10,8 +10,8 @@ public class Meme
     public Meme(int listIndex, int imageIndex)
     {
         Manager.imageManager._DownloadImage(Manager._imagesUrl[listIndex].list[imageIndex]);
-        if (listIndex == 0)      traceryAttributes = "#reactions#";
-        else if (listIndex == 1) traceryAttributes = GetTraceryAttributes(10);
+        if      (listIndex == 0) traceryAttributes = "#reactions#";
+        else if (listIndex == 1) traceryAttributes = GetTraceryAttributes(imageIndex);
     }
 
     public RawImage Image
@@ -36,10 +36,23 @@ public class Meme
     {
         switch (index)
         {
+            case 0:
+            case 11:
+                return "#subject#/#subject#/#subject#";
+            case 1:
+            case 2:
+            case 6:
+                return "#random_thing#/#random_thing#";
             case 10:
                 return "#opposites#";
+
+            case 18:
+                return "#duality#/#country_or_politicians#";
+            case 25:
+                return "#fuckedup_meal#";
             default:
-                return null;
+                return "#random_thing#";
         }
+
     }
 }

@@ -1,7 +1,7 @@
 {
+  "origin": [ "#fuckedup_meal#" ],
+
   "opposites": [ "#[country1:#country#][country2:#country#]opposites_head_tail#" ],
-
-
   "opposites_head_tail": [ "#opposites_heads#/#opposites_tails#" ],
 
   "opposites_heads": [ "#politician_bad#" ],
@@ -10,91 +10,50 @@
   "politician_bad": [ "#country1# #politic_action_bad# #country2#" ],
   "politician_good": [ "#country2# #politic_action_good#" ],
 
-  "politicians": [ "Macron", "Trump", "Le Pen", "Biden", "Clinton", "Johnson", "Erdogan", "Putin", "Zelensky", "Orban", "Melanchon", "Xi Jinping", "Kim Jong Un", "Sanders" ],
+  "politicians": [ "Macron", "Trump", "Le Pen", "Biden", "Clinton", "Johnson", "Erdogan", "Putin", "Zelensky", "Orban", "Melanchon", "Xi Jinping", "Kim Jong Un", "Sanders", "Gandhi" ],
   "politic_action_bad": [ "declaring war to", "invading" ],
-  "politic_action_good": ["nuking #country1#", "sending a nude to #country1#" ],
+  "politic_action_good": [ "making a speech for peace at the UN", "french kissing #politicians#", "sending a nude to #country_or_politicians#", "repealing death penalty" ],
   "politic_surprise": [ "" ],
   "country": [ "Germany", "USA", "UK", "Ireland", "France", "India", "Iceland", "Spain", "Italy", "Iran", "Irak", "Canada", "Russia", "China", "Japan", "Ukraine" ],
 
+  "political_institutions": [ "Chinese government", "Big Brother", "Ministry of Love", "House of Lords", "the economy", "the people", "the new regulation on nuclear weapon", "the government" ],
+
   "country_or_politicians": [ "#country#", "#politicians#" ],
 
+  "celebrities": [ "Kevin Spacey", "Harvey Weinstein", "Roman Polanski", "Dani Trejo", "The Rock", "The New York Times CEO" ],
 
 
-
-
-
-  "name": [ "Arjun", "Yuuma", "Darcy", "Mia", "Chiaki", "Izzi", "Azra", "Lina" ],
-  "animal": [ "unicorn", "raven", "sparrow", "scorpion", "coyote", "eagle", "owl", "lizard", "zebra", "duck", "kitten" ],
-  "occupationBase": [ "wizard", "witch", "detective", "ballerina", "criminal", "pirate", "lumberjack", "spy", "doctor", "scientist", "captain", "priest" ],
-  "occupationMod": [ "occult ", "space ", "professional ", "gentleman ", "erotic ", "time ", "cyber", "paleo", "techno", "super" ],
-  "strange": [ "mysterious", "portentous", "enchanting", "strange", "eerie" ],
-  "tale": [ "story", "saga", "tale", "legend" ],
-  "occupation": [ "#occupationMod##occupationBase#" ],
-  "mood": [ "vexed", "indignant", "impassioned", "wistful", "astute", "courteous" ],
-  "setPronouns": [ "[heroThey:they][heroThem:them][heroTheir:their][heroTheirs:theirs]", "[heroThey:she][heroThem:her][heroTheir:her][heroTheirs:hers]", "[heroThey:he][heroThem:him][heroTheir:his][heroTheirs:his]" ],
-  "setSailForAdventure": [ "set sail for adventure", "left #heroTheir# home", "set out for adventure", "went to seek #heroTheir# forture" ],
-  "setCharacter": [ "[#setPronouns#][hero:#name#][heroJob:#occupation#]" ],
-  "openBook": [ "An old #occupation# told #hero# a story. 'Listen well' she said to #hero#, 'to this #strange# #tale#. ' #origin#'", "#hero# went home.", "#hero# found an ancient book and opened it.  As #hero# read, the book told #strange.a# #tale#: #origin#" ],
-  "story": [ "#hero# the #heroJob# #setSailForAdventure#. #openBook#" ],
-  "origin": [ "Once upon a time, #[#setCharacter#]story#" ],
-
-
-  "reactions": [ "#when#" ],
-  "when": [ "When #subject# #verbs# #subject#" ],
+  "reactions": [ "#the_face##when#" ],
+  "the_face": [ "", "The face you make " ],
+  "when": [ "when #subject# #verbs# #subject#" ],
   "pronoun": [ "my" ],
-  "subject": [
-    "#pronoun# dog",
-    "#pronoun# mom",
-    "#pronoun# dad",
-    "#pronoun# slave",
-    "#pronoun# cat",
-    "#pronoun# master",
-    "#pronoun# teacher",
-    "#pronoun# lecturer",
-    "#pronoun# grandad",
-    "#pronoun# grandmother",
-    "#pronoun# #adjective# brother",
-    "#pronoun# #adjective# sister",
-    "#pronoun# car",
-    "#pronoun# bicycle",
-    "#pronoun# mere generation",
-    "my meme generator",
-    "Tony",
-    "Danny Trejo",
-    "Kevin Spacey",
-    "the government",
-    "House of Lords",
-    "the people",
-    "the economy",
-    "the new regulation on nuclear weapons",
-    "The New York Times CEO",
-    "my will to live",
-    "my suicidal thoughts",
-    "Chinese government",
-    "Big Brother",
-    "Ministry of Love"
-  ],
+  "subject": [ "#pronoun# dog", "#pronoun# mom", "#pronoun# dad", "#pronoun# cat", "#pronoun# teacher", "#pronoun# grandad", "#pronoun# grandmother", "#pronoun# #adjective# brother", "#pronoun# #adjective# sister" ],
 
   "adjective": [ "", "", "", "big", "little" ],
 
-  "verbs": [
-    "eats",
-    "fucks",
-    "burns",
-    "drinks",
-    "pisses on",
-    "creates",
-    "fertilises",
-    "throws up on",
-    "annihilates",
-    "blesses",
-    "impregnates",
-    "does",
-    "tries to do",
-    "insults",
-    "bullies",
-    "alienates",
-    "corrupts",
-    "gives a lustful look to"
-  ]
+  "verbs": [ "fucks", "pisses on", "fertilises", "annihilates", "blesses", "impregnates", "does", "tries to do", "insults", "bullies", "alienates", "corrupts", "gives a lustful look to" ],
+
+  "philosophical_concepts": [ "my will to live", "my suicidal thoughts", "The Unbearable lightness of being" ],
+  "philosophical_verbs": [ "consumes #pronoun#", "alienates", "corrupts", "accepts", "finds", "embraces" ],
+  "philosophers": [ "Kant", "Nietzsche", "Popper", "Hegel", "Sartre", "Beauvoir", "Kierkegaard", "Schopenhauer", "Bergson", "George W. Bush", "Leeroy Jenkins" ],
+
+  "bullshits": [ "Maguire is one of the best defender", "Milk goes before cereals", "Pineapple belongs on pizza", "The Office is overrated", "" ],
+
+  "duality": [ "#fuckedup_meal_simple#/#fuckedup_meal_simple#", "#politic_action_bad# #country#/#politic_action_bad# #country#", "#politic_action_good#/#politic_action_bad# #country#", "#politic_action_good#/#politic_action_good#" ],
+
+  "random_thing": [ "#random_food#", "#celebrities#", "#fuckedup_meal_simple#", "#country_or_politicians#", "#subject#", "#politicians#" ],
+
+
+  "fuckedup_meal": [ "#sweet# belongs on #meal#", "#savoury# belongs on #desert#" ],
+  "fuckedup_meal_simple": [ "#sweet# on #meal#", "#savoury# on #desert#" ],
+
+  "random_food": [ "#meal#", "#desert#", "#sweet#", "#savoury#" ],
+
+  "meal": [ "bento", "pizza", "miso soup", "sushi", "pie", "pasta", "begel", "noodles", "tortilla", "rice", "quiches", "roast chicken", "sardines", "lasagna", "couscous", "tacos", "mushroom risotto", "filet mignon", "marinated mussels", "endives with ham", "stew" ],
+
+  "desert": [ "pie", "tiramisu", "crème brûlée", "mochi", "Pakhlava", "croissant", "donuts", "ice cream", "#sweet# pudding", "#sweet# yoghurt cake", "crumble", "#sweet# tart", "ice cream sandwiches", "mille-feuille", "cupcake", "cheesecake", "banoffee pie" ],
+
+  "sweet": [ "strawberry", "pineapple", "almond", "apple", "caramel", "chocolate", "berry", "raspberries", "pear", "banana", "Nutella", "Oreo", "honey", "golden syrup" ],
+
+  "savoury": [ "salmon", "bacon", "cheese", "ham", "tuna", "spinach", "country chicken", "corn", "beef", "broccoli", "courgettes", "ribs", "olives", "parmesan", "lamb", "garlic", "onion", "mushrooms" ]
 }

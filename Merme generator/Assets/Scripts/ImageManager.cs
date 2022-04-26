@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class ImageManager : MonoBehaviour
 {
     [SerializeField] int imageHeightLimit, imageWidthLimit;
-    static int _imageHeightLimit, _imageWidthLimit;
 
     static RawImage image;
     static GameObject _loading;
@@ -16,8 +15,6 @@ public class ImageManager : MonoBehaviour
     {
         image = GetComponent<RawImage>();
         _loading = GameObject.Find("Loading");
-        _imageHeightLimit = imageHeightLimit;
-        _imageWidthLimit = imageWidthLimit;
     }
 
     public void _DownloadImage(string imageUrl) { StartCoroutine(DownloadImage(imageUrl)); }

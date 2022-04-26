@@ -48,7 +48,8 @@ public class Manager : MonoBehaviour
         imageManager.DeleteCaption();
 
         int rand_list = 1;// Random.Range(0, imagesUrl.Count);
-        int rand_index = 10;// Random.Range(0, imagesUrl[rand_list].list.Count);
+        int rand_index = 2;// Random.Range(0, imagesUrl[rand_list].list.Count);
+
         Debug.Log(rand_list + " " + rand_index);
         
         Meme meme = new Meme(rand_list, rand_index);
@@ -66,14 +67,14 @@ public class Manager : MonoBehaviour
     public void MemeWithCaption(Meme meme, int index)
     {
         string[] textGenerated = grammar.Parse(meme.TraceryAttributes).Split('/');
-
+        //Debug.Log(grammar.Parse(meme.TraceryAttributes));
         for (int i = 0; i < CaptionsPositions.data[index].Count; i++)
         {
-            GameObject textGo = Instantiate(tmpPrefab);
-            textGo.transform.SetParent(image.transform);
+            Transform textGoTransform = Instantiate(tmpPrefab).transform;
+            textGoTransform.SetParent(image.transform);
             List<int> captionPosition = CaptionsPositions.data[index][i];
-            textGo.transform.localPosition = new Vector2(captionPosition[0], captionPosition[1]);
-            textGo.transform.GetComponent<TextMeshProUGUI>().text = textGenerated[i];
+            textGoTransform.localPosition = new Vector2(captionPosition[0], captionPosition[1]);
+            textGoTransform.GetComponent<TextMeshProUGUI>().text = textGenerated[i];
         }
     }
 
