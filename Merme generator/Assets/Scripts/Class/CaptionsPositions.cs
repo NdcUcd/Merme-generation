@@ -83,8 +83,8 @@ public static class CaptionsPositions
 
         new List<List<int>>//12
         {
-            new List<int> { 50, 120 },
-            new List<int> { -50, -80 }
+            new List<int> { -50, -80 },
+            new List<int> { 50, 120 }
         },
 
         new List<List<int>>//13
@@ -97,13 +97,13 @@ public static class CaptionsPositions
         {
             new List<int> { 110, 130 },
             new List<int> { -90, 80 },
-            new List<int> { -40, -30 }
+            new List<int> { -100, -90 }
         },
 
         new List<List<int>>//15
         {
-            new List<int> { -80, 120 },
-            new List<int> { 55, 0 }
+            new List<int> { 55, 0 },
+            new List<int> { -80, 120 }
         },
 
         new List<List<int>>//16
@@ -135,7 +135,7 @@ public static class CaptionsPositions
             new List<int> { 165, 100 }
         },
 
-        new List<List<int>>//21#
+        new List<List<int>>//21
         {
             new List<int> { -60, 50 },
             new List<int> { 120, -45 }
@@ -143,21 +143,21 @@ public static class CaptionsPositions
 
         new List<List<int>>//22
         {
-            new List<int> { 30, 70 },
-            new List<int> { -40, -75 }
+            new List<int> { -40, -75 },
+            new List<int> { 30, 70 }
         },
 
         new List<List<int>>//23
         {
             new List<int> { 75, 100 },
-            new List<int> { -140, 50 },
-            new List<int> { 45, -135 }
+            new List<int> { 45, -135 },
+            new List<int> { -140, 50 }
         },
 
         new List<List<int>>//24
         {
             new List<int> { 200, -30 },
-            new List<int> { -240, 120 },
+            new List<int> { -85, 120 },
             new List<int> { 210, 155 }
         },
 

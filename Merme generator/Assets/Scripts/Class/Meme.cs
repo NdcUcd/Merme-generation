@@ -37,21 +37,49 @@ public class Meme
         switch (index)
         {
             case 0:
-            case 11:
+            case 11://...
                 return "#subject#/#subject#/#subject#";
             case 1:
             case 2:
+            case 3:
+                return "#people#/#people#";
+            case 4:
+                return "#politicians#/#politicians#";
+            case 5:
             case 6:
-                return "#random_thing#/#random_thing#";
+            case 7:
+                return "#political_duality#";
+            case 8:
+                return "#political_actions#";
+            case 9:
+            case 12:
+            case 13:
+                return "#duality#";
             case 10:
                 return "#opposites#";
-
+            case 14:
+                return "/#duality#";
+            case 15:
+            case 16:
+                return "#duality#";
+            case 17:
+                return "#good_bad_food#";
             case 18:
                 return "#duality#/#country_or_politicians#";
+            case 19:    //tweak
+                return "#things_you_dont_wanna_do#";
+            case 20:
+                return "#people#/#bravery#";
+            case 21:
+            case 22:
+                return "#kills#";//add
+            case 23:
+            case 24:
+                return "#bad_people#/#bravery#/#bad_people#";//add
             case 25:
                 return "#fuckedup_meal#";
             default:
-                return "#random_thing#";
+                return "#thing#";
         }
 
     }

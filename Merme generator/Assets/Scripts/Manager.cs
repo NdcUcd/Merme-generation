@@ -48,7 +48,7 @@ public class Manager : MonoBehaviour
         imageManager.DeleteCaption();
 
         int rand_list = 1;// Random.Range(0, imagesUrl.Count);
-        int rand_index = 2;// Random.Range(0, imagesUrl[rand_list].list.Count);
+        int rand_index = Random.Range(0, imagesUrl[rand_list].list.Count);
 
         Debug.Log(rand_list + " " + rand_index);
         
