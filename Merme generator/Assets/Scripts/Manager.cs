@@ -17,7 +17,7 @@ public class Manager : MonoBehaviour
 
 
     [Tooltip("0 = reactions\n" +
-             "1 = images with text")]
+             "1 = illustrations (images with text)")]
     [SerializeField] List<ListStringWrapper> imagesUrl = new List<ListStringWrapper>();
     public static List<ListStringWrapper> _imagesUrl = new List<ListStringWrapper>();
 
@@ -43,31 +43,31 @@ public class Manager : MonoBehaviour
         GenerateMeme();
     }
 
+    int i = 0;
     public void GenerateMeme()
     {
-        imageManager.DeleteCaption();
+        imageManager.DeleteCaption();   //Delete previous caption
 
-        int rand_list = 1;// Random.Range(0, imagesUrl.Count);
-        int rand_index = Random.Range(0, imagesUrl[rand_list].list.Count);
-
-        Debug.Log(rand_list + " " + rand_index);
+        int rand_list = Random.Range(0, imagesUrl.Count);                   //Randomly chose a list
+        int rand_index = Random.Range(0, imagesUrl[rand_list].list.Count);  //Randomly chose an image from that list
         
         Meme meme = new Meme(rand_list, rand_index);
 
-        if (rand_list == 0) {
-            titleTMP.text = grammar.Parse(meme.TraceryAttributes);
+        if (rand_list == 0) {   //Reaction memes
+            titleTMP.text = grammar.Parse(meme.TraceryAttributes);  //Fetch an output in the .json file according to the value given as parameter 
+                                                                    //To do that, the Tracery plug-in is used
         }
-        else
+        else                    //Illustration memes
         {
-            titleTMP.text = "";
-            MemeWithCaption(meme, rand_index);
+            titleTMP.text = ""; //We don't need a title for illustration memes
+            MemeWithCaption(meme, rand_index);  //This function splits the generated output and positions the different parts in the right place on the image
         }
     }
 
     public void MemeWithCaption(Meme meme, int index)
     {
         string[] textGenerated = grammar.Parse(meme.TraceryAttributes).Split('/');
-        //Debug.Log(grammar.Parse(meme.TraceryAttributes));
+
         for (int i = 0; i < CaptionsPositions.data[index].Count; i++)
         {
             Transform textGoTransform = Instantiate(tmpPrefab).transform;

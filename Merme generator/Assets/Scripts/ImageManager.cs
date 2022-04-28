@@ -1,13 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
 public class ImageManager : MonoBehaviour
 {
-    [SerializeField] int imageHeightLimit, imageWidthLimit;
-
     static RawImage image;
     static GameObject _loading;
 
@@ -68,8 +65,8 @@ public class ImageManager : MonoBehaviour
                         image.rectTransform.sizeDelta = new Vector2(imageWidth * imageWidthRatio, imageHeightLimit);
                     }
                 }
-                
-                if(image.texture.height > Manager._imageHeightLimit)
+
+                if (image.texture.height > Manager._imageHeightLimit)
                 {
                     int imageWidthLimit = Manager._imageWidthLimit,
                     imageHeightLimit = Manager._imageHeightLimit;

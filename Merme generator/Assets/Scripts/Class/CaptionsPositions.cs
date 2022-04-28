@@ -157,13 +157,11 @@ public static class CaptionsPositions
         new List<List<int>>//24
         {
             new List<int> { 200, -30 },
-            new List<int> { -85, 120 },
-            new List<int> { 210, 155 }
+            new List<int> { -85, 120 }
         },
 
         new List<List<int>>//25
         {
-            //new List<int> { -50, 115 },
             new List<int> { -90, -20 }
         }
     };
