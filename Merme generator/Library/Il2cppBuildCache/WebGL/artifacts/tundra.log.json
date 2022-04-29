@@ -1,0 +1,4 @@
+{"msg":"init","dagFile":"artifacts\\tundra.dag","targets":[]}
+{"msg":"enqueueNode","enqueuedNodeAnnotation":"all_tundra_nodes","enqueuedNodeIndex":0}
+{"msg":"enqueueNode","enqueuedNodeAnnotation":"WriteResponseFile artifacts/rsp/11018192847461943994.rsp","enqueuedNodeIndex":1,"enqueueingNodeAnnotation":"all_tundra_nodes","enqueueingNodeIndex":0}
+{"msg":"enqueueNode","enqueuedNodeAnnotation":"Il2Cpp C:/Users/dicos/Desktop/Courses/Comp. Creativity/Merme-generation/Merme generator/Library/Il2cppBuildCache/WebGL/Native/build.bc","enqueuedNodeIndex":2,"enqueueingNodeAnnotation":"all_tundra_nodes","enqueueingNodeIndex":0}

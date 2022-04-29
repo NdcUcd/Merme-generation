@@ -229,17 +229,23 @@
     "eat #fuckedup_meal_simple#",
     "read #philosophers#",
     "visit #country#",
-    "#country# will visit you",
     "have a face-to-face with #people#",
     "fight #people#",
     "vote for #politicians#",
     "french kiss #people#",
     "spend a night with #people#",
-    "watch cricket",
+    "watch #things_you_dont_want_to_watch#",
     "meet #bad_people#",
-    "shave someone's else armpit",
-    "sleep with the door open"
+    "shave someone else's armpits",
+    "sleep with the door open",
+    "sleep with their shoes on",
+    "sleep in their jeans",
+    "listen to #things_you_dont_want_to_listen_to#"
   ],
+
+  "things_you_dont_want_to_listen_to": [ "Placido Domingo", "Jonas Kauffmann", "Reggae", "James LaBrie", "Lucas Richaud", "John Myung", "Rita Mitsouko", "a Valérie Pécresse speach" ],
+  "things_you_dont_want_to_watch": [ "Machester United play", "Dr. House", "rap video", "8 Out of 10 Cats Does Countdown", "Dragonball Evolution", "Avatar: The Last Airbender", "a Japanese movie", "cricket" ],
+
 
   "decent_food": [ "#sweet# on #desert#", "#savoury# on #meal#" ],
   "duality_meal": [ "#savoury# on #meal#/#sweet# on #meal#" ],
@@ -254,7 +260,7 @@
 
   "reactions": [ "#the_face# #when#" ],
   "clever": [ "you can't #things_you_dont_wanna_do# if you don't #things_you_dont_wanna_do#", "#deep#" ],
-  "the_face": [ "", "The face you make", "The face I make", "The look on your face", "The look on my face", "Me", "You", "me after", "you after", ""],
+  "the_face": [ "", "The face you make", "The face I make", "The look on your face", "The look on my face", "Me", "You", "me after", "you after", "" ],
   "when": [ "when #r#" ],
   "r": [ "#people_r#", "#politic_r#", "#bad_good_r#" ],
   "people_r": [ "#people# #verbs# #people#" ],
